@@ -24,6 +24,10 @@
     <link href="libs/animate.css-xaringan/animate.fade.css" rel="stylesheet" />
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
+    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
     <link href="libs/font-awesome/css/fontawesome-all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
@@ -1148,7 +1152,7 @@ now()
 ```
 
 ```
-&gt; [1] "2022-04-04 13:01:43 -05"
+&gt; [1] "2022-04-04 17:33:38 -05"
 ```
 
 ---
@@ -3135,12 +3139,12 @@ microbenchmark((1:500)^2, for (i in 1:1:500) {i^2}, times = 300)
 
 ```
 &gt; Unit: microseconds
-&gt;                            expr    min     lq     mean  median      uq    max
-&gt;                       (1:500)^2    1.3    1.7    3.974    3.10    4.25   38.8
-&gt;  for (i in 1:1:500) {     i^2 } 1550.7 1629.7 2045.700 1791.15 2009.00 6476.4
-&gt;  neval
-&gt;    300
-&gt;    300
+&gt;                            expr    min     lq        mean  median      uq
+&gt;                       (1:500)^2    1.7    2.6    7.481333    5.75    8.60
+&gt;  for (i in 1:1:500) {     i^2 } 2035.6 2447.7 4276.133333 3271.40 4916.85
+&gt;      max neval
+&gt;     48.1   300
+&gt;  64772.5   300
 ```
 
 ---
@@ -5106,9 +5110,9 @@ starwars %&gt;%
 &gt; # A tibble: 3 x 14
 &gt;   name      height  mass hair_color skin_color eye_color birth_year sex   gender
 &gt;   &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
-&gt; 1 Luminara~    170  56.2 black      yellow     blue              58 fema~ femin~
-&gt; 2 Tarfful      234 136   brown      brown      blue              NA male  mascu~
-&gt; 3 Shmi Sky~    163  NA   black      fair       brown             72 fema~ femin~
+&gt; 1 Darth Ma~    175    80 none       red        yellow            54 male  mascu~
+&gt; 2 Bib Fort~    180    NA none       pale       pink              NA male  mascu~
+&gt; 3 Shmi Sky~    163    NA black      fair       brown             72 fema~ femin~
 &gt; # ... with 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
 &gt; #   vehicles &lt;list&gt;, starships &lt;list&gt;
 ```
@@ -5123,9 +5127,9 @@ starwars %&gt;%
 &gt; # A tibble: 3 x 14
 &gt;   name      height  mass hair_color skin_color eye_color birth_year sex   gender
 &gt;   &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
-&gt; 1 Dooku        193    80 white      fair       brown            102 male  mascu~
-&gt; 2 Jar Jar ~    196    66 none       orange     orange            52 male  mascu~
-&gt; 3 Shmi Sky~    163    NA black      fair       brown             72 fema~ femin~
+&gt; 1 Zam Wese~    168    55 blonde     fair, gre~ yellow            NA fema~ femin~
+&gt; 2 Sebulba      112    40 none       grey, red  orange            NA male  mascu~
+&gt; 3 Jango Fe~    183    79 black      tan        brown             66 male  mascu~
 &gt; # ... with 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
 &gt; #   vehicles &lt;list&gt;, starships &lt;list&gt;
 ```
@@ -5145,14 +5149,14 @@ starwars %&gt;%
 &gt; # A tibble: 8 x 14
 &gt;   name      height  mass hair_color skin_color eye_color birth_year sex   gender
 &gt;   &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
-&gt; 1 Finn          NA    NA black      dark       dark              NA male  mascu~
-&gt; 2 Ayla Sec~    178    55 none       blue       hazel             48 fema~ femin~
-&gt; 3 Owen Lars    178   120 brown, gr~ light      blue              52 male  mascu~
-&gt; 4 Darth Ma~    175    80 none       red        yellow            54 male  mascu~
-&gt; 5 Obi-Wan ~    182    77 auburn, w~ fair       blue-gray         57 male  mascu~
-&gt; 6 Bossk        190   113 none       green      red               53 male  mascu~
-&gt; 7 Ratts Ty~     79    15 none       grey, blue unknown           NA male  mascu~
-&gt; 8 Mon Moth~    150    NA auburn     fair       blue              48 fema~ femin~
+&gt; 1 Han Solo     180  80   brown      fair       brown             29 male  mascu~
+&gt; 2 C-3PO        167  75   &lt;NA&gt;       gold       yellow           112 none  mascu~
+&gt; 3 Obi-Wan ~    182  77   auburn, w~ fair       blue-gray         57 male  mascu~
+&gt; 4 Mace Win~    188  84   none       dark       brown             72 male  mascu~
+&gt; 5 Luminara~    170  56.2 black      yellow     blue              58 fema~ femin~
+&gt; 6 BB8           NA  NA   none       none       black             NA none  mascu~
+&gt; 7 Lama Su      229  88   none       grey       black             NA male  mascu~
+&gt; 8 Owen Lars    178 120   brown, gr~ light      blue              52 male  mascu~
 &gt; # ... with 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
 &gt; #   vehicles &lt;list&gt;, starships &lt;list&gt;
 ```
@@ -6491,10 +6495,10 @@ notas %&gt;% rowwise() %&gt;% mutate(media_curso = mean(c(mates, lengua)))
 &gt; # Rowwise: 
 &gt;   mates lengua media_curso
 &gt;   &lt;int&gt;  &lt;int&gt;       &lt;dbl&gt;
-&gt; 1     7      4         5.5
-&gt; 2     7      5         6  
-&gt; 3     9      8         8.5
-&gt; 4     7      7         7
+&gt; 1     5      0         2.5
+&gt; 2     3      8         5.5
+&gt; 3     3      9         6  
+&gt; 4    10      8         9
 ```
 
 ---

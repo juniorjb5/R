@@ -43,6 +43,8 @@ use_clipboard( # About clipboard
 use_freezeframe(responsive = FALSE) # restarting gifs
 use_animate_all("fade") # animates
 use_panelset() # panels 
+xaringanExtra::use_share_again()
+
 ```
 
 
