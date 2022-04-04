@@ -1148,7 +1148,7 @@ now()
 ```
 
 ```
-&gt; [1] "2022-04-04 12:21:41 -05"
+&gt; [1] "2022-04-04 12:54:03 -05"
 ```
 
 ---
@@ -3135,12 +3135,12 @@ microbenchmark((1:500)^2, for (i in 1:1:500) {i^2}, times = 300)
 
 ```
 &gt; Unit: microseconds
-&gt;                            expr    min     lq        mean  median      uq
-&gt;                       (1:500)^2    1.2    1.8    4.395667    3.20    5.20
-&gt;  for (i in 1:1:500) {     i^2 } 1556.5 1639.2 2190.981333 1844.75 2510.05
-&gt;     max neval
-&gt;    49.1   300
-&gt;  7137.8   300
+&gt;                            expr    min     lq        mean  median     uq    max
+&gt;                       (1:500)^2    1.3    1.7    3.928667    3.10    4.6   41.7
+&gt;  for (i in 1:1:500) {     i^2 } 1546.8 1615.6 2047.572667 1689.85 1960.0 6539.5
+&gt;  neval
+&gt;    300
+&gt;    300
 ```
 
 ---
@@ -5106,9 +5106,9 @@ starwars %&gt;%
 &gt; # A tibble: 3 x 14
 &gt;   name      height  mass hair_color skin_color eye_color birth_year sex   gender
 &gt;   &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
-&gt; 1 Roos Tar~    224    82 none       grey       orange            NA male  mascu~
-&gt; 2 Wicket S~     88    20 brown      brown      brown              8 male  mascu~
-&gt; 3 Ackbar       180    83 none       brown mot~ orange            41 male  mascu~
+&gt; 1 Dexter J~    198   102 none       brown      yellow            NA male  mascu~
+&gt; 2 BB8           NA    NA none       none       black             NA none  mascu~
+&gt; 3 Bail Pre~    191    NA black      tan        brown             67 male  mascu~
 &gt; # ... with 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
 &gt; #   vehicles &lt;list&gt;, starships &lt;list&gt;
 ```
@@ -5123,9 +5123,9 @@ starwars %&gt;%
 &gt; # A tibble: 3 x 14
 &gt;   name      height  mass hair_color skin_color eye_color birth_year sex   gender
 &gt;   &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
-&gt; 1 Saesee T~    188    NA none       pale       orange            NA male  mascu~
-&gt; 2 Lama Su      229    88 none       grey       black             NA male  mascu~
-&gt; 3 Beru Whi~    165    75 brown      light      blue              47 fema~ femin~
+&gt; 1 Raymus A~    188    79 brown      light      brown             NA male  mascu~
+&gt; 2 Rugor Na~    206    NA none       green      orange            NA male  mascu~
+&gt; 3 Ratts Ty~     79    15 none       grey, blue unknown           NA male  mascu~
 &gt; # ... with 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
 &gt; #   vehicles &lt;list&gt;, starships &lt;list&gt;
 ```
@@ -5143,16 +5143,16 @@ starwars %&gt;%
 
 ```
 &gt; # A tibble: 8 x 14
-&gt;   name      height  mass hair_color skin_color eye_color birth_year sex   gender
-&gt;   &lt;chr&gt;      &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
-&gt; 1 Nien Nunb    160    68 none       grey       black           NA   male  mascu~
-&gt; 2 BB8           NA    NA none       none       black           NA   none  mascu~
-&gt; 3 Ric Olié     183    NA brown      fair       blue            NA   &lt;NA&gt;  &lt;NA&gt;  
-&gt; 4 Anakin S~    188    84 blond      fair       blue            41.9 male  mascu~
-&gt; 5 Arvel Cr~     NA    NA brown      fair       brown           NA   male  mascu~
-&gt; 6 Wilhuff ~    180    NA auburn, g~ fair       blue            64   male  mascu~
-&gt; 7 Darth Va~    202   136 none       white      yellow          41.9 male  mascu~
-&gt; 8 Obi-Wan ~    182    77 auburn, w~ fair       blue-gray       57   male  mascu~
+&gt;   name     height   mass hair_color skin_color eye_color birth_year sex   gender
+&gt;   &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; 
+&gt; 1 Jabba D~    175 1358   &lt;NA&gt;       green-tan~ orange           600 herm~ mascu~
+&gt; 2 Rey          NA   NA   brown      light      hazel             NA fema~ femin~
+&gt; 3 Finis V~    170   NA   blond      fair       blue              91 male  mascu~
+&gt; 4 Jek Ton~    180  110   brown      fair       blue              NA male  mascu~
+&gt; 5 Mas Ame~    196   NA   none       blue       blue              NA male  mascu~
+&gt; 6 Luminar~    170   56.2 black      yellow     blue              58 fema~ femin~
+&gt; 7 Shmi Sk~    163   NA   black      fair       brown             72 fema~ femin~
+&gt; 8 Obi-Wan~    182   77   auburn, w~ fair       blue-gray         57 male  mascu~
 &gt; # ... with 5 more variables: homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
 &gt; #   vehicles &lt;list&gt;, starships &lt;list&gt;
 ```
@@ -6491,10 +6491,10 @@ notas %&gt;% rowwise() %&gt;% mutate(media_curso = mean(c(mates, lengua)))
 &gt; # Rowwise: 
 &gt;   mates lengua media_curso
 &gt;   &lt;int&gt;  &lt;int&gt;       &lt;dbl&gt;
-&gt; 1     4      6         5  
-&gt; 2     8      9         8.5
-&gt; 3     8      3         5.5
-&gt; 4     0      8         4
+&gt; 1     9      7         8  
+&gt; 2     6      1         3.5
+&gt; 3     6      2         4  
+&gt; 4     2      7         4.5
 ```
 
 ---
@@ -11907,7 +11907,7 @@ Edificio E56 - Universidad del Valle
 
 
 Edificio E56 - Universidad del Valle
-![](http://industrial.univalle.edu.co/images/la_escuela/presentacion/ESCUELA_20181001.jpg)
+![](./img/ESCUELA.jpg)
 
 
 ---
@@ -11931,7 +11931,7 @@ Edificio E56 - Universidad del Valle
 [Photo](http://industrial.univalle.edu.co/images/la_escuela/presentacion/ESCUELA_20181001.jpg)
 
 Edificio E56 - Universidad del Valle
-![](http://industrial.univalle.edu.co/images/la_escuela/presentacion/ESCUELA_20181001.jpg)
+![](./img/ESCUELA.jpg)
 
 
 ---
@@ -12013,6 +12013,7 @@ library(tidyverse)
 
 ]
 
+---
 
 # Websites!
 
