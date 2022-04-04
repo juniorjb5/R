@@ -9339,7 +9339,7 @@ Edificio E56 - Universidad del Valle
 
 
 Edificio E56 - Universidad del Valle
-![](./img/ESCUELA.jpg)
+![](./img/ESCUELA.png)
 
 
 ---
@@ -9363,7 +9363,7 @@ Edificio E56 - Universidad del Valle
 [Photo](http://industrial.univalle.edu.co/images/la_escuela/presentacion/ESCUELA_20181001.jpg)
 
 Edificio E56 - Universidad del Valle
-![](./img/ESCUELA.jpg)
+![](./img/ESCUELA.png)
 
 
 ---
@@ -9447,6 +9447,8 @@ library(tidyverse)
 ]
 
 ---
+
+class: center, middle
 
 # Websites!
 
